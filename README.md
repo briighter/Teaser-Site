@@ -16,10 +16,11 @@ No build tools, no npm, no frameworks. Open `index.html` in any browser.
 ## Preview Locally
 
 ```bash
-# Option 1 — Open directly in browser
-open index.html
+# Requires a local server (file:// won't resolve clean URLs or root-relative paths)
+npx serve .
+# Then open http://localhost:3000
 
-# Option 2 — Use a simple local server (avoids root-relative path issues)
+# Or with Python
 python3 -m http.server 8080
 # Then open http://localhost:8080
 ```
@@ -35,18 +36,22 @@ python3 -m http.server 8080
 
 ## Updating Legal Pages
 
-- **Privacy Policy** → edit `privacy.html` — update the "Last Updated" date and section content as needed
-- **Terms of Service** → edit `terms.html` — update the "Last Updated" date, governing jurisdiction placeholder, and any other sections
+- **Privacy Policy** → edit `privacy/index.html` — update the "Last Updated" date and section content as needed
+- **Terms of Service** → edit `terms/index.html` — update the "Last Updated" date, governing jurisdiction placeholder, and any other sections
 
 ## File Structure
 
 ```
 /
 ├── index.html              # Homepage
-├── features.html           # Features deep-dive
-├── support.html            # Support / FAQ
-├── privacy.html            # Privacy Policy
-├── terms.html              # Terms of Service
+├── features/
+│   └── index.html          # Features deep-dive  →  /features/
+├── support/
+│   └── index.html          # Support / FAQ       →  /support/
+├── privacy/
+│   └── index.html          # Privacy Policy      →  /privacy/
+├── terms/
+│   └── index.html          # Terms of Service    →  /terms/
 ├── css/
 │   ├── variables.css       # Design tokens (colors, spacing, typography)
 │   ├── base.css            # Reset, body, typography
