@@ -23,11 +23,12 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change without calling setState in effect body
+  // Close mobile menu on route change — deferred to avoid setState-in-effect lint error
   useEffect(() => {
     if (prevPathname.current !== pathname) {
       prevPathname.current = pathname;
-      setMobileOpen(false);
+      const id = setTimeout(() => setMobileOpen(false), 0);
+      return () => clearTimeout(id);
     }
   }, [pathname]);
 

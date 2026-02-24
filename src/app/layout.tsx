@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: "Build. Schedule. Teach.",
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: "/icon.png",
   },
   metadataBase: new URL("https://teaser.studio"),
 };
