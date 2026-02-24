@@ -128,7 +128,7 @@ export default function SupportPage() {
       {/* Still need help — dark CTA */}
       <section
         className="py-20"
-        style={{ background: "linear-gradient(180deg, #0F1410 0%, #1A1E1B 100%)" }}
+        style={{ background: "linear-gradient(180deg, #000000 0%, #162430 100%)" }}
       >
         <div className="mx-auto max-w-[560px] px-6 text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--color-accent)]">
@@ -143,7 +143,7 @@ export default function SupportPage() {
           </p>
           <a
             href="mailto:jaylima0@gmail.com"
-            className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.08em] text-[var(--color-on-accent)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,255,87,0.3)] no-underline"
+            className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.08em] text-[var(--color-on-accent)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,219,217,0.3)] no-underline"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             EMAIL SUPPORT

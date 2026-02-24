@@ -1,28 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #1E2019;
-  --color-on-primary: #E8F0E3;
-  --color-accent: #B8FF57;
-  --color-on-accent: #1E2019;
-  --color-tertiary: #5B6B7C;
-  --color-surface: #FFFFFF;
-  --color-surface-variant: #F4F6F3;
-  --color-background: #FAFBF9;
-  --color-text-primary: #1E2019;
-  --color-text-secondary: #5B6B7C;
-  --color-text-muted: #9AA3A0;
-  --color-outline: #D1D5D8;
-  --color-outline-variant: #E8EAE9;
+  /* Primary: Charcoal Blue — authority & calm depth */
+  --color-primary: #2f4550;
+  --color-on-primary: #f4f4f9;
+
+  /* Accent: Light Blue — soft highlights & CTAs */
+  --color-accent: #b8dbd9;
+  --color-on-accent: #2f4550;
+
+  /* Tertiary: Blue Slate — intelligence & cool depth */
+  --color-tertiary: #586f7c;
+
+  /* Surface & Background */
+  --color-surface: #ffffff;
+  --color-surface-variant: #eceef5;
+  --color-background: #f4f4f9;
+
+  /* Text */
+  --color-text-primary: #2f4550;
+  --color-text-secondary: #586f7c;
+  --color-text-muted: #8a9ba5;
+
+  /* Borders */
+  --color-outline: #c0cdd3;
+  --color-outline-variant: #dde2e8;
+
+  /* Semantic */
   --color-error: #D64545;
   --color-success: #4A7C59;
   --color-warning: #E5A03C;
-  --color-dark-bg: #0F1410;
-  --color-dark-surface: #1A1E1B;
-  --color-dark-surface-variant: #2A2E2B;
-  --color-dark-text: #E8F0E3;
-  --color-dark-text-secondary: #C4C9C5;
-  --color-dark-outline: #3F4440;
+
+  /* Dark mode tokens */
+  --color-dark-bg: #000000;
+  --color-dark-surface: #162430;
+  --color-dark-surface-variant: #2f4550;
+  --color-dark-text: #f4f4f9;
+  --color-dark-text-secondary: #b8dbd9;
+  --color-dark-outline: #3f5661;
+
   --radius: 8px;
 }
 
@@ -46,8 +62,8 @@ body {
 }
 
 ::selection {
-  background: rgba(184, 255, 87, 0.3);
-  color: #1E2019;
+  background: rgba(184, 219, 217, 0.35);
+  color: #2f4550;
 }
 
 /* FAQ accordion */

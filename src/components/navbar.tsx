@@ -35,8 +35,8 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${
         scrolled
-          ? "bg-[#1A1E1B]/95 border-b border-[#3F4440]"
-          : "bg-[#1A1E1B]/80"
+          ? "bg-[#162430]/95 border-b border-[#3f5661]"
+          : "bg-[#162430]/80"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-280 items-center justify-between px-6">
@@ -68,7 +68,7 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/#download"
-            className="hidden rounded-lg bg-(--color-accent) px-6 py-2.5 text-sm font-bold uppercase tracking-[0.08em] text-(--color-on-accent) transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,255,87,0.3)] md:inline-flex no-underline"
+            className="hidden rounded-lg bg-(--color-accent) px-6 py-2.5 text-sm font-bold uppercase tracking-[0.08em] text-(--color-on-accent) transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,219,217,0.3)] md:inline-flex no-underline"
           >
             DOWNLOAD
           </Link>

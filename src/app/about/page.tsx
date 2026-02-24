@@ -55,7 +55,7 @@ export default function AboutPage() {
         className="py-24"
         style={{
           background:
-            "linear-gradient(180deg, #0F1410 0%, #1A1E1B 100%)",
+            "linear-gradient(180deg, #000000 0%, #162430 100%)",
         }}
       >
         {/* Subtle grid */}
@@ -63,7 +63,7 @@ export default function AboutPage() {
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(184,255,87,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(184,255,87,0.03) 1px, transparent 1px)",
+              "linear-gradient(rgba(184,219,217,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(184,219,217,0.03) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
           aria-hidden="true"
@@ -135,7 +135,7 @@ export default function AboutPage() {
       {/* About the Creator Section — light */}
       <section
         className="py-24"
-        style={{ background: "linear-gradient(180deg, #FAFBF9 0%, #F4F6F3 100%)" }}
+        style={{ background: "linear-gradient(180deg, #f4f4f9 0%, #eceef5 100%)" }}
       >
         <div className="mx-auto max-w-[1120px] px-6">
           <div className="grid items-center gap-16 md:grid-cols-[340px_1fr]">
@@ -158,7 +158,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3, duration: 0.3 }}
-                  className="absolute -right-4 -bottom-4 rounded-[8px] bg-[var(--color-accent)] px-4 py-2 font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-[0.08em] text-[var(--color-on-accent)] shadow-[0_4px_16px_rgba(184,255,87,0.3)]"
+                  className="absolute -right-4 -bottom-4 rounded-[8px] bg-[var(--color-accent)] px-4 py-2 font-[family-name:var(--font-mono)] text-xs font-bold uppercase tracking-[0.08em] text-[var(--color-on-accent)] shadow-[0_4px_16px_rgba(184,219,217,0.3)]"
                 >
                   The People&apos;s Software Engineer
                 </motion.div>

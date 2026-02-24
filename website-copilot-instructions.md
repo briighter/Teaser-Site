@@ -1,56 +1,58 @@
+````instructions
 # teaser.studio — Website Copilot Instructions
 
 ## Project Overview
 
-Marketing and product website for **Teaser**, a fitness curriculum platform for professional instructors. The site lives at [teaser.studio](https://teaser.studio) and serves as the primary acquisition surface for the mobile app — communicating authority, energy, and studio-grade professionalism.
+Marketing and product website for **Teaser**, a fitness curriculum platform for professional instructors. The site lives at [teaser.studio](https://teaser.studio) and serves as the primary acquisition surface for the mobile app — communicating precision, calm authority, and approachability across all movement modalities.
 
-**Core goal:** Convert fitness instructors into app signups. Every design decision serves that conversion — clarity over decoration, authority over warmth.
+**Core goal:** Convert fitness instructors into app signups. Every design decision serves that conversion — clarity over decoration, confidence over aggression.
+
+**Target audiences:** Pilates, Yoga, and group fitness instructors. The aesthetic must feel welcoming to mindful movement disciplines while maintaining professional credibility for HIIT and strength coaches.
 
 ---
 
 ## Tech Stack
 
-- **Framework:** Next.js (App Router) + TypeScript
-- **Styling:** Tailwind CSS + CSS custom properties
+- **Framework:** Next.js 16 (App Router) + TypeScript
+- **Styling:** Tailwind CSS v4 + CSS custom properties
 - **Animation:** Motion (formerly Framer Motion) for React
-- **UI Components:** shadcn/ui (customized to brand)
 - **Fonts:** Google Fonts (loaded via `next/font`)
-- **Deployment:** Github Pages (static export)
+- **Deployment:** GitHub Pages (static export via `output: "export"`)
 
 ---
 
-## Brand Identity: "Studio Command Center"
+## Brand Identity: "Precision Meets Softness"
 
-The aesthetic is **Bloomberg Terminal meets high-end boutique studio** — Barry's Bootcamp, Equinox, Linear. A professional power tool, not a wellness journal.
+The aesthetic is **thoughtful, calm, and quietly confident** — like a well-designed studio space. Think Linear's clarity combined with the warmth of a Pilates reformer studio. Professional enough for gym owners, soft enough for yoga instructors.
 
-### Core Palette
+### Core Palette — "Monochrome Sky"
 
 ```css
 :root {
-  /* Primary: Deep Charcoal — authority & expertise */
-  --color-primary: #1E2019;
-  --color-on-primary: #E8F0E3;
+  /* Primary: Charcoal Blue — authority with warmth */
+  --color-primary: #2f4550;
+  --color-on-primary: #f4f4f9;
 
-  /* Accent: Electric Lime — energy & precision (USE SPARINGLY) */
-  --color-accent: #B8FF57;
-  --color-on-accent: #1E2019;
+  /* Accent: Light Blue — calm energy (USE SPARINGLY) */
+  --color-accent: #b8dbd9;
+  --color-on-accent: #2f4550;
 
-  /* Tertiary: Slate Blue — intelligence & depth */
-  --color-tertiary: #5B6B7C;
+  /* Tertiary: Blue Slate — intelligence & depth */
+  --color-tertiary: #586f7c;
 
   /* Surface & Background */
   --color-surface: #FFFFFF;
-  --color-surface-variant: #F4F6F3;
-  --color-background: #FAFBF9;
+  --color-surface-variant: #eceef5;
+  --color-background: #f4f4f9;
 
   /* Text */
-  --color-text-primary: #1E2019;
-  --color-text-secondary: #5B6B7C;
-  --color-text-muted: #9AA3A0;
+  --color-text-primary: #2f4550;
+  --color-text-secondary: #586f7c;
+  --color-text-muted: #8a9aa3;
 
   /* Borders */
-  --color-outline: #D1D5D8;
-  --color-outline-variant: #E8EAE9;
+  --color-outline: #cdd1dc;
+  --color-outline-variant: #e2e4ec;
 
   /* Semantic */
   --color-error: #D64545;
@@ -60,23 +62,20 @@ The aesthetic is **Bloomberg Terminal meets high-end boutique studio** — Barry
 ```
 
 **Color usage rules:**
-- **80% grayscale + 15% charcoal + 5% electric lime**
-- Electric lime only for: hero CTAs, active states, highlights, key stats
-- Never hardcode colors — always use CSS variables
+- **80% ghost white/slate tones + 15% charcoal blue + 5% light blue accent**
+- Light blue only for: hero CTAs, active states, highlights, key stats
+- Never hardcode colors — always use CSS variables (`var(--color-*)`)
 
-### Dark Mode (Preferred for Sections)
+### Dark Mode (Used for Hero & Feature Sections)
 
 ```css
-[data-theme="dark"] {
-  --color-primary: #B8FF57;       /* Lime becomes primary */
-  --color-on-primary: #1E2019;
-  --color-background: #0F1410;
-  --color-surface: #1A1E1B;
-  --color-surface-variant: #2A2E2B;
-  --color-text-primary: #E8F0E3;
-  --color-text-secondary: #C4C9C5;
-  --color-outline: #3F4440;
-}
+/* Dark section tokens */
+--color-dark-bg: #000000;
+--color-dark-surface: #162430;
+--color-dark-surface-variant: #2f4550;
+--color-dark-text: #f4f4f9;
+--color-dark-text-secondary: #b8dbd9;
+--color-dark-outline: #3f5661;
 ```
 
 ---
@@ -88,45 +87,44 @@ The aesthetic is **Bloomberg Terminal meets high-end boutique studio** — Barry
 ### Typography
 
 <use_interesting_fonts>
-Typography instantly signals quality. Choose fonts that are beautiful, distinctive, and technically precise.
+Typography instantly signals quality. Our fonts are geometric and friendly — soft precision, not harsh techno.
 
 **Never use:** Inter, Roboto, Open Sans, Lato, or bare system fonts for display text.
 
 **Teaser-approved font pairings:**
-- **Display / Headings:** `Barlow Condensed` (800–900 weight), `Space Grotesk` (700), `DM Mono` for data callouts
-- **Body / UI:** `IBM Plex Sans` (clean, technical), `Source Sans 3`
-- **Code/Stats aesthetic:** `JetBrains Mono`, `IBM Plex Mono` — use for rep counts, class stats, numbers
-- **Editorial sections:** `Newsreader` (for testimonials or long-form)
+- **Display / Headings:** `DM Sans` (600–900 weight) — geometric, friendly, precise
+- **Body / UI:** `DM Sans` (400–700 weight) — same family for visual harmony
+- **Code / Stats aesthetic:** `DM Mono` (400–500 weight) — for rep counts, class stats, data callouts
 
-**Pairing principle:** High contrast = interesting. Condensed display + monospace data, variable weight extremes (200 vs 800), size jumps of 3× or more.
+**Pairing principle:** Weight contrast within the same family creates visual interest without clash. Use weight jumps (400 vs 800), size jumps of 3× or more, and monospace for data emphasis.
 
 **Load via `next/font/google`** — never CDN links for performance.
 
 ```tsx
-import { Barlow_Condensed, IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
+import { DM_Sans, DM_Mono } from 'next/font/google';
 
-const display = Barlow_Condensed({ subsets: ['latin'], weight: ['600', '700', '800', '900'] });
-const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'] });
-const body = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '500', '600'] });
+const display = DM_Sans({ subsets: ['latin'], weight: ['600', '700', '800', '900'], variable: '--font-display' });
+const body = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-body' });
+const mono = DM_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-mono' });
 ```
 </use_interesting_fonts>
 
 ### Color & Theme
 
 <commit_to_aesthetic>
-Commit fully to the Studio Command Center aesthetic. Do not default to safe, generic palettes.
+Commit fully to the Precision Meets Softness aesthetic. Do not default to safe, generic palettes.
 
-- **Dark sections first:** hero, features, and pricing sections should use dark charcoal backgrounds (`#0F1410`, `#1A1E1B`) — not white. Light sections are the exception.
-- **Electric lime is a scalpel, not a paintbrush.** Use it for one CTA, one stat callout, or one active state per section. Never as a background fill.
-- **Slate blue (`#5B6B7C`) for secondary text, labels, and borders.** Cooler than warm gray — technical, not cozy.
-- **Sharp borders, not soft:** 2px solid outlines, 6–8px border-radius on components (not 24px pill shapes).
-- **UPPERCASE labels:** button text, section labels, badge text — all-caps with `letter-spacing: 0.05em`.
+- **Dark sections lead:** Hero and feature sections use dark backgrounds (`#000000` → `#162430` gradients). Light sections are the complement.
+- **Light blue accent is a scalpel, not a paintbrush.** Use it for one CTA, one stat callout, or one active state per section. Never as a background fill.
+- **Blue slate (`#586f7c`) for secondary text, labels, and borders.** Cool and professional.
+- **Soft but precise shapes:** 8–12px border-radius on components. Not harsh squares, not 24px pills.
+- **UPPERCASE labels:** Button text, section labels, badge text — all-caps with `letter-spacing: 0.05–0.08em`.
 </commit_to_aesthetic>
 
 ### Motion & Animation
 
 <use_purposeful_motion>
-Animations communicate professionalism and energy. Prioritize CSS-only where possible; use Motion library for React when needed.
+Animations communicate precision and calm confidence. Prioritize CSS-only where possible; use Motion library for React when needed.
 
 **High-impact moments:**
 ```tsx
@@ -165,7 +163,7 @@ const heroWords = 'Build. Schedule. Teach.'.split(' ');
 }
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(184, 255, 87, 0.3); /* Lime glow */
+  box-shadow: 0 8px 32px rgba(184, 219, 217, 0.3); /* Light blue glow */
 }
 .cta-button:active {
   transform: translateY(0);
@@ -180,7 +178,7 @@ const heroWords = 'Build. Schedule. Teach.'.split(' ');
 **Forbidden:**
 - ❌ Bounce effects (too playful)
 - ❌ Spinning loaders — use skeleton shimmer
-- ❌ Random floating elements or parallax parallax on every scroll event
+- ❌ Random floating elements or parallax on every scroll event
 - ❌ Confetti or particle systems
 </use_purposeful_motion>
 
@@ -191,10 +189,10 @@ Never default to solid flat backgrounds. Create depth and atmosphere.
 
 **Dark hero/sections:**
 ```css
-/* Subtle noise texture over deep dark */
+/* Subtle glow over deep dark gradient */
 .hero {
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, #2A3D0C22, transparent),
-              linear-gradient(180deg, #0F1410 0%, #1A1E1B 100%);
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(88,111,124,0.15), transparent),
+              linear-gradient(180deg, #000000 0%, #162430 100%);
 }
 
 /* Grid pattern overlay (technical aesthetic) */
@@ -203,37 +201,38 @@ Never default to solid flat backgrounds. Create depth and atmosphere.
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(184,255,87,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(184,255,87,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(184,219,217,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184,219,217,0.04) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
 }
 
-/* Lime accent glow (use once — on hero CTA area) */
+/* Light blue accent glow (use once — on hero CTA area) */
 .hero-glow {
-  background: radial-gradient(ellipse 40% 30% at 50% 100%, rgba(184,255,87,0.12), transparent);
+  background: radial-gradient(ellipse 40% 30% at 50% 100%, rgba(184,219,217,0.12), transparent);
 }
 ```
 
 **Light sections:**
 ```css
-/* Cool off-white — not warm cream */
+/* Cool ghost white — not warm cream */
 .section-light {
-  background: linear-gradient(180deg, #FAFBF9 0%, #F4F6F3 100%);
+  background: linear-gradient(180deg, #f4f4f9 0%, #eceef5 100%);
 }
 
 /* Card depth */
 .card {
   background: #FFFFFF;
-  border: 1px solid #E8EAE9;
-  box-shadow: 0 2px 8px rgba(30,32,25,0.06), 0 1px 2px rgba(30,32,25,0.04);
+  border: 1px solid #e2e4ec;
+  box-shadow: 0 2px 8px rgba(47,69,80,0.06), 0 1px 2px rgba(47,69,80,0.04);
 }
 ```
 
 **Avoid:**
 - ❌ Solid `#FFFFFF` full-page backgrounds
 - ❌ Generic blue-to-purple gradients
-- ❌ Warm beige / sage tones (wellness-app aesthetic)
+- ❌ Hot neon colors (electric lime, hot pink)
+- ❌ Warm beige / sage tones (generic wellness aesthetic)
 </create_atmospheric_backgrounds>
 
 ---
@@ -244,20 +243,20 @@ Never default to solid flat backgrounds. Create depth and atmosphere.
 
 | Route | Purpose |
 |---|---|
-| `/` | Hero + features + social proof + pricing + CTA |
+| `/` | Hero + features + social proof + CTA |
 | `/features` | Deep-dive feature breakdown |
-| `/pricing` | Plans comparison |
-| `/about` | Brand story |
-| `/blog` | Instructor content (optional) |
-| `/download` | App store redirect |
+| `/about` | Brand story + creator |
+| `/support` | Help center + contact |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
 
 ### Hero Section — Non-Negotiables
 
-- **Headline:** Bold, declarative, all-caps or heavy weight. Not "The app for fitness instructors." — something with energy: **"YOUR CURRICULUM. YOUR STUDIO. COMMAND IT."**
+- **Headline:** Bold, declarative, heavy weight. Energy meets calm: **"YOUR CURRICULUM. YOUR STUDIO. COMMAND IT."**
 - **Subheadline:** One sentence. Functional — what it does, for whom.
-- **Primary CTA:** Electric lime button (`#B8FF57`), dark charcoal text, sharp 8px radius, uppercase label
+- **Primary CTA:** Light blue button (`var(--color-accent)`), charcoal text, 8px radius, uppercase label
 - **Secondary CTA:** Outlined charcoal, same radius
-- **Hero visual:** Device mockup or app screenshot on dark background — not a stock photo of a person "working out"
+- **Hero visual:** Device mockup or app screenshot on dark background — not a stock photo
 - **Social proof anchor:** "Trusted by X instructors" or app store rating — below fold
 
 ### Feature Sections
@@ -265,7 +264,7 @@ Never default to solid flat backgrounds. Create depth and atmosphere.
 Structure each feature block as:
 ```
 ┌─────────────────────────────────────┐
-│  LABEL (uppercase, lime or slate)   │
+│  LABEL (uppercase, accent or slate) │
 │  Feature Headline (display font)    │
 │  2–3 sentence description           │
 │  [Screenshot / Demo visual]         │
@@ -292,7 +291,7 @@ const stats = [
 ];
 ```
 
-Display on dark background with electric lime accent on the numbers.
+Display on dark background with light blue accent on the numbers.
 
 ---
 
@@ -301,13 +300,13 @@ Display on dark background with electric lime accent on the numbers.
 ### CTA Button
 
 ```tsx
-// Primary (lime)
+// Primary (light blue accent)
 <button className="
-  bg-[#B8FF57] text-[#1E2019]
+  bg-(--color-accent) text-(--color-on-accent)
   font-semibold tracking-widest uppercase text-sm
   px-8 py-3.5 rounded-[8px]
   transition-all duration-150
-  hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,255,87,0.3)]
+  hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,219,217,0.3)]
   active:translate-y-0
 ">
   GET STARTED FREE
@@ -315,11 +314,11 @@ Display on dark background with electric lime accent on the numbers.
 
 // Secondary (outlined charcoal)
 <button className="
-  border-2 border-[#1E2019] text-[#1E2019]
+  border-2 border-(--color-primary) text-(--color-primary)
   font-semibold tracking-widest uppercase text-sm
   px-8 py-3 rounded-[8px]
   transition-all duration-150
-  hover:bg-[#1E2019] hover:text-white
+  hover:bg-(--color-primary) hover:text-(--color-on-primary)
 ">
   SEE HOW IT WORKS
 </button>
@@ -329,21 +328,21 @@ Display on dark background with electric lime accent on the numbers.
 
 ```tsx
 <div className="
-  bg-white border border-[#E8EAE9] rounded-[8px] p-6
-  shadow-[0_2px_8px_rgba(30,32,25,0.06)]
-  hover:shadow-[0_4px_16px_rgba(30,32,25,0.1)]
+  bg-white border border-(--color-outline-variant) rounded-[8px] p-6
+  shadow-[0_2px_8px_rgba(47,69,80,0.06)]
+  hover:shadow-[0_4px_16px_rgba(47,69,80,0.1)]
   transition-shadow duration-200
 ">
   <span className="
     inline-block text-[11px] font-semibold tracking-[0.05em] uppercase
-    bg-[#B8FF57] text-[#1E2019] px-2.5 py-1 rounded-[4px] mb-4
+    bg-(--color-accent) text-(--color-on-accent) px-2.5 py-1 rounded-[4px] mb-4
   ">
     {category}
   </span>
-  <h3 className="text-[22px] font-bold tracking-tight text-[#1E2019] mb-2">
+  <h3 className="text-[22px] font-bold tracking-tight text-(--color-primary) mb-2">
     {title}
   </h3>
-  <p className="text-[#5B6B7C] text-base leading-relaxed">
+  <p className="text-(--color-text-secondary) text-base leading-relaxed">
     {description}
   </p>
 </div>
@@ -352,7 +351,7 @@ Display on dark background with electric lime accent on the numbers.
 ### Navigation
 
 ```tsx
-// Sticky nav: transparent on hero, solid on scroll
+// Sticky nav: always dark, transparent initially then solid on scroll
 const [scrolled, setScrolled] = useState(false);
 
 <nav className={`
@@ -360,13 +359,13 @@ const [scrolled, setScrolled] = useState(false);
   flex items-center justify-between
   transition-all duration-300
   ${scrolled
-    ? 'bg-[#1A1E1B]/95 backdrop-blur-sm border-b border-[#3F4440]'
-    : 'bg-transparent'
+    ? 'bg-[#162430]/95 backdrop-blur-sm border-b border-[#3f5661]'
+    : 'bg-[#162430]/80 backdrop-blur-sm'
   }
 `}>
   <Logo />
   <NavLinks />
-  <button className="bg-[#B8FF57] text-[#1E2019] ...">
+  <button className="bg-(--color-accent) text-(--color-on-accent) ...">
     DOWNLOAD APP
   </button>
 </nav>
@@ -414,12 +413,13 @@ export const metadata: Metadata = {
 
 ## Content Voice & Copy
 
-**Tone:** Confident, direct, professional. The instructor audience is a subject matter expert — write peer-to-peer, not top-down.
+**Tone:** Confident, approachable, professional. The instructor audience is a subject matter expert — write peer-to-peer, not top-down. Softer than corporate SaaS, sharper than wellness blogs.
 
 **Do:**
-- Short, punchy headlines: "Your curriculum. Structured."
-- Active verbs: "Build", "Schedule", "Command", "Deploy"
+- Short, clear headlines: "Your curriculum. Structured."
+- Active verbs: "Build", "Schedule", "Teach", "Organize"
 - Specificity over hype: "2,400+ exercises across 12 muscle groups" > "huge library"
+- Warm precision: confident without being aggressive
 
 **Don't:**
 - "Revolutionize your fitness journey" (wellness cliché)
@@ -431,15 +431,16 @@ export const metadata: Metadata = {
 
 ## Forbidden Patterns
 
-❌ Purple gradient on white background (default AI aesthetic)  
-❌ Soft rounded pill buttons (use 8px radius)  
-❌ Inter, Roboto, or Open Sans for headings  
-❌ Pastel color accents  
-❌ Stock photos of people working out  
-❌ Generic Material Design or Ant Design defaults without customization  
-❌ Animated counter numbers as the only "wow" moment  
-❌ Floating decorative blobs or amorphous shapes  
-❌ Warm beige or sage green (wellness aesthetic)  
+❌ Purple gradient on white background (default AI aesthetic)
+❌ Soft rounded pill buttons (use 8px radius)
+❌ Inter, Roboto, or Open Sans for headings
+❌ Neon / electric accent colors (lime green, hot pink)
+❌ Stock photos of people working out
+❌ Generic Material Design or Ant Design defaults without customization
+❌ Animated counter numbers as the only "wow" moment
+❌ Floating decorative blobs or amorphous shapes
+❌ Warm beige or sage green (generic wellness aesthetic)
+❌ Hardcoded color values — always use CSS variables
 
 ---
 
@@ -447,13 +448,22 @@ export const metadata: Metadata = {
 
 | Token | Value | Usage |
 |---|---|---|
-| Primary | `#1E2019` | Text, borders, dark backgrounds |
-| Accent | `#B8FF57` | CTAs, active states, stats |
-| Tertiary | `#5B6B7C` | Secondary text, labels |
-| Background | `#FAFBF9` | Light sections |
-| Dark BG | `#0F1410` | Hero, feature sections |
-| Surface | `#FFFFFF` | Cards |
+| Primary | `#2f4550` | Text, borders, charcoal backgrounds |
+| Accent | `#b8dbd9` | CTAs, active states, stats |
+| Tertiary | `#586f7c` | Secondary text, labels |
+| Background | `#f4f4f9` | Light sections (ghost white) |
+| Surface Variant | `#eceef5` | Light section gradient end |
+| Dark BG | `#000000` | Hero gradient start |
+| Dark Surface | `#162430` | Dark sections, navbar |
+| Dark Outline | `#3f5661` | Borders on dark sections |
 | Radius | `8px` | All interactive components |
 | Spacing base | `8px` | 8pt grid: 4/8/16/24/32/48px |
-| Border | `1–2px solid #E8EAE9` | Cards on light |
-| Border dark | `1px solid #3F4440` | Cards on dark |
+| Border light | `1px solid #e2e4ec` | Cards on light |
+| Border dark | `1px solid #3f5661` | Cards on dark |
+| Glow shadow | `rgba(184,219,217,0.3)` | CTA hover glow |
+| Card shadow | `rgba(47,69,80,0.06)` | Light card depth |
+| Font Display | `DM Sans 600–900` | Headlines, headings |
+| Font Body | `DM Sans 400–700` | Body text, UI labels |
+| Font Mono | `DM Mono 400–500` | Stats, data, code |
+
+````

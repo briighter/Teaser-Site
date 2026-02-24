@@ -2,7 +2,7 @@ export function SocialProofBar() {
   return (
     <div
       className="border-y border-[var(--color-dark-outline)] py-6"
-      style={{ background: "#1A1E1B" }}
+      style={{ background: "#162430" }}
       aria-label="Social proof"
     >
       <div className="mx-auto flex max-w-[1120px] flex-wrap items-center justify-center gap-8 px-6">

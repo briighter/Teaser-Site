@@ -29,7 +29,7 @@ const features = [
 
 export function FeaturesOverview() {
   return (
-    <section className="py-24" style={{ background: "linear-gradient(180deg, #FAFBF9 0%, #F4F6F3 100%)" }} aria-labelledby="features-heading">
+    <section className="py-24" style={{ background: "linear-gradient(180deg, #f4f4f9 0%, #eceef5 100%)" }} aria-labelledby="features-heading">
       <div className="mx-auto max-w-280 px-6">
         <Reveal className="mx-auto mb-16 max-w-160 text-center">
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-(--color-text-muted)">
@@ -50,7 +50,7 @@ export function FeaturesOverview() {
         <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <StaggerItem key={f.title}>
-              <div className="flex h-full flex-col rounded-lg border border-(--color-outline-variant) bg-white p-8 shadow-[0_2px_8px_rgba(30,32,25,0.06),0_1px_2px_rgba(30,32,25,0.04)] transition-shadow duration-200 hover:shadow-[0_4px_16px_rgba(30,32,25,0.1)]">
+              <div className="flex h-full flex-col rounded-lg border border-(--color-outline-variant) bg-white p-8 shadow-[0_2px_8px_rgba(47,69,80,0.06),0_1px_2px_rgba(47,69,80,0.04)] transition-shadow duration-200 hover:shadow-[0_4px_16px_rgba(47,69,80,0.1)]">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-(--color-surface-variant) text-(--color-text-primary)">
                   {f.icon}
                 </div>

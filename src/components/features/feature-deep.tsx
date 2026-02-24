@@ -5,11 +5,11 @@ import { Reveal } from "@/components/reveal";
 /* ---------- Mockup mini‑components ---------- */
 function MockupShell({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-[8px] bg-[var(--color-primary)] p-6 font-[family-name:var(--font-mono)] text-sm text-[var(--color-on-primary)] shadow-[0_8px_24px_rgba(30,32,25,0.12),0_4px_8px_rgba(30,32,25,0.08)]">
-      <div className="mb-6 flex items-center gap-2 border-b border-[rgba(232,240,227,0.12)] pb-4">
-        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(232,240,227,0.2)]" />
-        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(232,240,227,0.2)]" />
-        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(232,240,227,0.2)]" />
+    <div className="rounded-[8px] bg-[var(--color-primary)] p-6 font-[family-name:var(--font-mono)] text-sm text-[var(--color-on-primary)] shadow-[0_8px_24px_rgba(47,69,80,0.12),0_4px_8px_rgba(47,69,80,0.08)]">
+      <div className="mb-6 flex items-center gap-2 border-b border-[rgba(244,244,249,0.12)] pb-4">
+        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(244,244,249,0.2)]" />
+        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(244,244,249,0.2)]" />
+        <span className="h-[10px] w-[10px] rounded-full bg-[rgba(244,244,249,0.2)]" />
         <span className="ml-2 text-xs uppercase tracking-[0.08em] text-[var(--color-text-muted)]">{title}</span>
       </div>
       {children}
@@ -19,7 +19,7 @@ function MockupShell({ title, children }: { title: string; children: React.React
 
 function Row({ accent, children }: { accent?: boolean; children: React.ReactNode }) {
   return (
-    <div className={`mb-2 flex items-center gap-3 rounded-[6px] px-4 py-3 ${accent ? "bg-[rgba(184,255,87,0.12)]" : ""}`}>
+    <div className={`mb-2 flex items-center gap-3 rounded-[6px] px-4 py-3 ${accent ? "bg-[rgba(184,219,217,0.12)]" : ""}`}>
       {children}
     </div>
   );
@@ -27,7 +27,7 @@ function Row({ accent, children }: { accent?: boolean; children: React.ReactNode
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-[4px] bg-[rgba(184,255,87,0.15)] px-2 py-[2px] text-xs uppercase tracking-[0.06em] text-[var(--color-accent)]">
+    <span className="rounded-[4px] bg-[rgba(184,219,217,0.18)] px-2 py-[2px] text-xs uppercase tracking-[0.06em] text-[var(--color-accent)]">
       {children}
     </span>
   );
@@ -50,7 +50,7 @@ function VaultMockup() {
       <Row><Tag>Lower</Tag><Value>Goblet Squat</Value></Row>
       <Row><Tag>Cardio</Tag><Value>Box Jump</Value></Row>
       <Row><Tag>Upper</Tag><Value>Pull-Up</Value></Row>
-      <div className="mt-4 border-t border-[rgba(232,240,227,0.1)] pt-4">
+      <div className="mt-4 border-t border-[rgba(244,244,249,0.1)] pt-4">
         <Label>Showing 5 of 100+ exercises</Label>
       </div>
     </MockupShell>
@@ -66,11 +66,11 @@ function BuilderMockup() {
         <div className="flex-1"><Value>Barbell Back Squat</Value><br /><Label>4 × 8 · Rest 90s</Label></div>
       </Row>
       <Row>
-        <span className="text-sm font-bold text-[rgba(184,255,87,0.5)]">A2</span>
+        <span className="text-sm font-bold text-[rgba(184,219,217,0.5)]">A2</span>
         <div className="flex-1"><Value>Romanian Deadlift</Value><br /><Label>4 × 10 · Rest 90s</Label></div>
       </Row>
       <Row>
-        <span className="text-sm font-bold text-[rgba(184,255,87,0.5)]">B1</span>
+        <span className="text-sm font-bold text-[rgba(184,219,217,0.5)]">B1</span>
         <div className="flex-1"><Value>Push-Up Variation</Value><br /><Label>3 × 12 · Rest 60s</Label></div>
       </Row>
     </MockupShell>
@@ -103,7 +103,7 @@ function OrgMockup() {
       <Row><Value>S. Chen</Value><span className="ml-auto"><Label>Admin</Label></span></Row>
       <Row><Value>A. Okafor</Value><span className="ml-auto"><Label>Instructor</Label></span></Row>
       <Row><Value>L. Petrova</Value><span className="ml-auto"><Label>Instructor</Label></span></Row>
-      <div className="mt-4 border-t border-[rgba(232,240,227,0.1)] pt-4">
+      <div className="mt-4 border-t border-[rgba(244,244,249,0.1)] pt-4">
         <Label>3 locations · 4 members</Label>
       </div>
     </MockupShell>

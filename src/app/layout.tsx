@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
-const display = Barlow_Condensed({
+const display = DM_Sans({
   subsets: ["latin"],
   weight: ["600", "700", "800", "900"],
   variable: "--font-display",
 });
 
-const body = IBM_Plex_Sans({
+const body = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-body",
 });
 
-const mono = IBM_Plex_Mono({
+const mono = DM_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
   variable: "--font-mono",
 });
 
