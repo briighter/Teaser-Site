@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
   { href: "/features", label: "Features" },
@@ -14,6 +14,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const prevPathname = useRef(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -22,22 +23,26 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close mobile menu on route change without calling setState in effect body
   useEffect(() => {
-    setMobileOpen(false);
+    if (prevPathname.current !== pathname) {
+      prevPathname.current = pathname;
+      setMobileOpen(false);
+    }
   }, [pathname]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${
         scrolled
-          ? "bg-[#1A1E1B]/95 backdrop-blur-sm border-b border-[#3F4440]"
-          : "bg-transparent"
+          ? "bg-[#1A1E1B]/95 border-b border-[#3F4440]"
+          : "bg-[#1A1E1B]/80"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-[1120px] items-center justify-between px-6">
+      <div className="mx-auto flex h-16 max-w-280 items-center justify-between px-6">
         <Link
           href="/"
-          className="font-[family-name:var(--font-display)] text-xl font-extrabold tracking-tight text-[var(--color-on-primary)] no-underline"
+          className="font-(family-name:--font-display) text-xl font-extrabold tracking-tight text-(--color-on-primary) no-underline"
         >
           TEASER
         </Link>
@@ -50,8 +55,8 @@ export function Navbar() {
                 href={l.href}
                 className={`text-sm font-semibold uppercase tracking-[0.08em] transition-colors duration-150 no-underline ${
                   pathname === l.href
-                    ? "text-[var(--color-accent)]"
-                    : "text-[var(--color-dark-text-secondary)] hover:text-[var(--color-on-primary)]"
+                    ? "text-(--color-accent)"
+                    : "text-(--color-dark-text-secondary) hover:text-(--color-on-primary)"
                 }`}
               >
                 {l.label}
@@ -63,7 +68,7 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="/#download"
-            className="hidden rounded-[8px] bg-[var(--color-accent)] px-6 py-2.5 text-sm font-bold uppercase tracking-[0.08em] text-[var(--color-on-accent)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,255,87,0.3)] md:inline-flex no-underline"
+            className="hidden rounded-lg bg-(--color-accent) px-6 py-2.5 text-sm font-bold uppercase tracking-[0.08em] text-(--color-on-accent) transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,255,87,0.3)] md:inline-flex no-underline"
           >
             DOWNLOAD
           </Link>
@@ -71,22 +76,22 @@ export function Navbar() {
           {/* Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex flex-col gap-[5px] p-2 md:hidden"
+            className="flex flex-col gap-1.25 p-2 md:hidden"
             aria-label="Toggle navigation"
           >
             <span
-              className={`block h-[2px] w-6 rounded-sm bg-[var(--color-on-primary)] transition-transform duration-200 ${
-                mobileOpen ? "translate-y-[7px] rotate-45" : ""
+              className={`block h-0.5 w-6 rounded-sm bg-(--color-on-primary) transition-transform duration-200 ${
+                mobileOpen ? "translate-y-1.75 rotate-45" : ""
               }`}
             />
             <span
-              className={`block h-[2px] w-6 rounded-sm bg-[var(--color-on-primary)] transition-opacity duration-200 ${
+              className={`block h-0.5 w-6 rounded-sm bg-(--color-on-primary) transition-opacity duration-200 ${
                 mobileOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block h-[2px] w-6 rounded-sm bg-[var(--color-on-primary)] transition-transform duration-200 ${
-                mobileOpen ? "-translate-y-[7px] -rotate-45" : ""
+              className={`block h-0.5 w-6 rounded-sm bg-(--color-on-primary) transition-transform duration-200 ${
+                mobileOpen ? "-translate-y-1.75 -rotate-45" : ""
               }`}
             />
           </button>
@@ -95,7 +100,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-b border-[var(--color-dark-outline)] bg-[var(--color-dark-surface)] px-6 py-6 md:hidden">
+        <div className="border-b border-(--color-dark-outline) bg-(--color-dark-surface) px-6 py-6 md:hidden">
           <ul className="flex flex-col gap-4">
             {links.map((l) => (
               <li key={l.href}>
@@ -103,8 +108,8 @@ export function Navbar() {
                   href={l.href}
                   className={`text-sm font-semibold uppercase tracking-[0.08em] no-underline ${
                     pathname === l.href
-                      ? "text-[var(--color-accent)]"
-                      : "text-[var(--color-dark-text-secondary)]"
+                      ? "text-(--color-accent)"
+                      : "text-(--color-dark-text-secondary)"
                   }`}
                 >
                   {l.label}
@@ -114,7 +119,7 @@ export function Navbar() {
             <li>
               <Link
                 href="/#download"
-                className="mt-2 inline-block rounded-[8px] bg-[var(--color-accent)] px-6 py-2.5 text-sm font-bold uppercase tracking-[0.08em] text-[var(--color-on-accent)] no-underline"
+                className="mt-2 inline-block rounded-lg bg-(--color-accent) px-6 py-2.5 text-sm font-bold uppercase tracking-[0.08em] text-(--color-on-accent) no-underline"
               >
                 DOWNLOAD
               </Link>

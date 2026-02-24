@@ -89,7 +89,7 @@ export default function TermsPage() {
             <h2>14. Contact Us</h2>
             <p>If you have any questions about these Terms, please contact us at:</p>
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:support@teaser.app">support@teaser.app</a></li>
+              <li><strong>Email:</strong> <a href="mailto:jaylima0@gmail.com">jaylima0@gmail.com</a></li>
             </ul>
           </div>
         </div>

@@ -30,18 +30,18 @@ const features = [
 export function FeaturesOverview() {
   return (
     <section className="py-24" style={{ background: "linear-gradient(180deg, #FAFBF9 0%, #F4F6F3 100%)" }} aria-labelledby="features-heading">
-      <div className="mx-auto max-w-[1120px] px-6">
-        <Reveal className="mx-auto mb-16 max-w-[640px] text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
+      <div className="mx-auto max-w-280 px-6">
+        <Reveal className="mx-auto mb-16 max-w-160 text-center">
+          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-(--color-text-muted)">
             Features
           </p>
           <h2
             id="features-heading"
-            className="mb-4 font-[family-name:var(--font-display)] text-[2.25rem] font-extrabold leading-[1.15] tracking-tight text-[var(--color-text-primary)]"
+            className="mb-4 font-(family-name:--font-display) text-[2.25rem] font-extrabold leading-[1.15] tracking-tight text-(--color-text-primary)"
           >
             Everything you need to run your studio
           </h2>
-          <p className="text-lg text-[var(--color-text-secondary)]">
+          <p className="text-lg text-(--color-text-secondary)">
             From exercise library to class scheduling, Teaser gives
             professional fitness instructors a complete command center.
           </p>
@@ -50,14 +50,14 @@ export function FeaturesOverview() {
         <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <StaggerItem key={f.title}>
-              <div className="rounded-[8px] border border-[var(--color-outline-variant)] bg-white p-8 shadow-[0_2px_8px_rgba(30,32,25,0.06),0_1px_2px_rgba(30,32,25,0.04)] transition-shadow duration-200 hover:shadow-[0_4px_16px_rgba(30,32,25,0.1)]">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-[8px] bg-[var(--color-surface-variant)] text-[var(--color-text-primary)]">
+              <div className="flex h-full flex-col rounded-lg border border-(--color-outline-variant) bg-white p-8 shadow-[0_2px_8px_rgba(30,32,25,0.06),0_1px_2px_rgba(30,32,25,0.04)] transition-shadow duration-200 hover:shadow-[0_4px_16px_rgba(30,32,25,0.1)]">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-(--color-surface-variant) text-(--color-text-primary)">
                   {f.icon}
                 </div>
-                <h3 className="mb-3 text-[1.375rem] font-bold tracking-tight text-[var(--color-text-primary)]">
+                <h3 className="mb-3 text-[1.375rem] font-bold tracking-tight text-(--color-text-primary)">
                   {f.title}
                 </h3>
-                <p className="leading-relaxed text-[var(--color-text-secondary)]">
+                <p className="flex-1 leading-relaxed text-(--color-text-secondary)">
                   {f.body}
                 </p>
               </div>
@@ -68,7 +68,7 @@ export function FeaturesOverview() {
         <div className="mt-12 text-center">
           <Link
             href="/features"
-            className="inline-flex items-center rounded-[8px] border-2 border-[var(--color-primary)] px-8 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-primary)] transition-all duration-150 hover:bg-[var(--color-primary)] hover:text-white no-underline"
+            className="inline-flex items-center rounded-lg border-2 border-(--color-primary) px-8 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-(--color-primary) transition-all duration-150 hover:bg-(--color-primary) hover:text-white no-underline"
           >
             See all features
           </Link>

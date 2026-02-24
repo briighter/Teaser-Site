@@ -66,7 +66,7 @@ export default function PrivacyPage() {
               <li><strong>Portability:</strong> Request a machine-readable export of your personal data.</li>
               <li><strong>Objection:</strong> Object to certain types of processing of your personal data.</li>
             </ul>
-            <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@teaser.app">privacy@teaser.app</a>. We will respond to your request within 30 days.</p>
+            <p>To exercise any of these rights, please contact us at <a href="mailto:jaylima0@gmail.com">jaylima0@gmail.com</a>. We will respond to your request within 30 days.</p>
 
             <h2>7. Data Retention</h2>
             <p>We retain your personal data for as long as your account is active or as needed to provide the Service. If you delete your account, we will delete or anonymize your personal data within 30 days, except where we are required to retain it for legal, tax, or regulatory purposes.</p>
@@ -83,8 +83,7 @@ export default function PrivacyPage() {
             <h2>11. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
             <ul>
-              <li><strong>Email:</strong> <a href="mailto:privacy@teaser.app">privacy@teaser.app</a></li>
-              <li><strong>Support:</strong> <a href="mailto:support@teaser.app">support@teaser.app</a></li>
+              <li><strong>Email:</strong> <a href="mailto:jaylima0@gmail.com">jaylima0@gmail.com</a></li>
             </ul>
           </div>
         </div>

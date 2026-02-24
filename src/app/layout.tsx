@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${display.variable} ${body.variable} ${mono.variable} font-[family-name:var(--font-body)] antialiased`}
+        className={`${display.variable} ${body.variable} ${mono.variable} font-(family-name:--font-body) antialiased`}
       >
         <Navbar />
         <main className="pt-16">{children}</main>

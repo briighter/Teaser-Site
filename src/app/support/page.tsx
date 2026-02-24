@@ -49,87 +49,103 @@ export default function SupportPage() {
         </p>
       </PageHero>
 
-      {/* Contact */}
-      <section className="py-16" aria-labelledby="contact-heading">
-        <div className="mx-auto max-w-[1120px] px-6">
-          <h2
-            id="contact-heading"
-            className="mb-6 font-[family-name:var(--font-display)] text-[1.75rem] font-extrabold tracking-tight"
-          >
-            Contact Us
-          </h2>
-          <div className="grid max-w-[720px] gap-4 sm:grid-cols-2">
+      {/* Contact cards — full-width accent strip */}
+      <section className="relative" aria-labelledby="contact-heading">
+        <div className="absolute inset-0 h-1/2" style={{ background: "var(--color-surface-variant)" }} />
+        <div className="relative mx-auto max-w-280 px-6">
+          <div className="grid gap-6 sm:grid-cols-3">
             {/* Email */}
-            <div className="flex items-start gap-4 rounded-[8px] border border-[var(--color-outline-variant)] bg-white p-8 shadow-[0_1px_3px_rgba(30,32,25,0.08),0_1px_2px_rgba(30,32,25,0.04)]">
-              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-[8px] bg-[var(--color-surface-variant)]">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-[var(--color-text-primary)]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div className="rounded-lg border border-[var(--color-outline-variant)] bg-white p-8 shadow-[0_4px_16px_rgba(30,32,25,0.06)]">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-surface-variant)]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[var(--color-text-primary)]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
-              <div>
-                <h3 className="mb-1 font-bold text-[var(--color-text-primary)]">Email Support</h3>
-                <p className="mb-2 text-sm text-[var(--color-text-secondary)]">Send us a message and we&apos;ll reply within 1–2 business days.</p>
-                <a href="mailto:jaylima0@gmail.com" className="font-semibold text-[var(--color-text-primary)] underline underline-offset-2">jaylima0@gmail.com</a>
-              </div>
+              <h3 className="mb-1 text-sm font-bold uppercase tracking-widest text-[var(--color-text-muted)]">
+                Email Us
+              </h3>
+              <a href="mailto:jaylima0@gmail.com" className="text-lg font-semibold text-[var(--color-text-primary)] underline underline-offset-4 decoration-[var(--color-accent)] decoration-2">
+                jaylima0@gmail.com
+              </a>
             </div>
-            {/* Response */}
-            <div className="flex items-start gap-4 rounded-[8px] border border-[var(--color-outline-variant)] bg-white p-8 shadow-[0_1px_3px_rgba(30,32,25,0.08),0_1px_2px_rgba(30,32,25,0.04)]">
-              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-[8px] bg-[var(--color-surface-variant)]">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-[var(--color-text-primary)]"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+
+            {/* Response Time */}
+            <div className="rounded-lg border border-[var(--color-outline-variant)] bg-white p-8 shadow-[0_4px_16px_rgba(30,32,25,0.06)]">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-surface-variant)]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[var(--color-text-primary)]"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
-              <div>
-                <h3 className="mb-1 font-bold text-[var(--color-text-primary)]">Response Time</h3>
-                <p className="mb-2 text-sm text-[var(--color-text-secondary)]">We typically respond within 1–2 business days Monday through Friday.</p>
-                <strong className="text-sm">Mon – Fri, 9am – 5pm PT</strong>
+              <h3 className="mb-1 text-sm font-bold uppercase tracking-widest text-[var(--color-text-muted)]">
+                Response Time
+              </h3>
+              <p className="text-lg font-semibold text-[var(--color-text-primary)]">1–2 business days</p>
+            </div>
+
+            {/* Hours */}
+            <div className="rounded-lg border border-[var(--color-outline-variant)] bg-white p-8 shadow-[0_4px_16px_rgba(30,32,25,0.06)]">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--color-surface-variant)]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[var(--color-text-primary)]"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               </div>
+              <h3 className="mb-1 text-sm font-bold uppercase tracking-widest text-[var(--color-text-muted)]">
+                Hours
+              </h3>
+              <p className="text-lg font-semibold text-[var(--color-text-primary)]">Mon – Fri, 9am – 5pm PT</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16" aria-labelledby="faq-heading">
-        <div className="mx-auto max-w-[1120px] px-6">
-          <h2
-            id="faq-heading"
-            className="mb-8 font-[family-name:var(--font-display)] text-[1.75rem] font-extrabold tracking-tight"
-          >
-            Frequently Asked Questions
-          </h2>
-          <div className="max-w-[720px] space-y-3">
-            {faqs.map((faq) => (
-              <details
-                key={faq.q}
-                className="faq-item overflow-hidden rounded-[8px] border border-[var(--color-outline-variant)] bg-white"
-              >
-                <summary className="flex cursor-pointer select-none items-center justify-between px-6 py-6 font-semibold text-[var(--color-text-primary)] transition-colors duration-150 hover:bg-[var(--color-surface-variant)]">
-                  {faq.q}
-                </summary>
-                <div
-                  className="px-6 pb-6 leading-relaxed text-[var(--color-text-secondary)]"
-                  dangerouslySetInnerHTML={{ __html: faq.a }}
-                />
-              </details>
-            ))}
+      <section className="py-24" aria-labelledby="faq-heading">
+        <div className="mx-auto max-w-280 px-6">
+          <div className="mx-auto max-w-[760px]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--color-text-muted)]">
+              FAQ
+            </p>
+            <h2
+              id="faq-heading"
+              className="mb-10 font-[family-name:var(--font-display)] text-[2rem] font-extrabold tracking-tight"
+            >
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-3">
+              {faqs.map((faq) => (
+                <details
+                  key={faq.q}
+                  className="faq-item group overflow-hidden rounded-lg border border-[var(--color-outline-variant)] bg-white transition-shadow duration-200 hover:shadow-[0_2px_8px_rgba(30,32,25,0.06)]"
+                >
+                  <summary className="flex cursor-pointer select-none items-center justify-between px-6 py-5 font-semibold text-[var(--color-text-primary)] transition-colors duration-150 hover:bg-[var(--color-surface-variant)]">
+                    {faq.q}
+                  </summary>
+                  <div
+                    className="border-t border-[var(--color-outline-variant)] px-6 py-5 leading-relaxed text-[var(--color-text-secondary)]"
+                    dangerouslySetInnerHTML={{ __html: faq.a }}
+                  />
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Still need help */}
-      <section className="py-16 text-center" style={{ background: "var(--color-surface-variant)" }}>
-        <div className="mx-auto max-w-[560px] px-6">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
+      {/* Still need help — dark CTA */}
+      <section
+        className="py-20"
+        style={{ background: "linear-gradient(180deg, #0F1410 0%, #1A1E1B 100%)" }}
+      >
+        <div className="mx-auto max-w-[560px] px-6 text-center">
+          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[var(--color-accent)]">
             Still need help?
           </p>
-          <h2 className="mb-4 font-[family-name:var(--font-display)] text-[1.75rem] font-extrabold tracking-tight">
+          <h2 className="mb-4 font-[family-name:var(--font-display)] text-[1.75rem] font-extrabold tracking-tight text-[var(--color-on-primary)]">
             We&apos;re happy to assist
           </h2>
-          <p className="mb-8 text-[var(--color-text-secondary)]">
+          <p className="mb-8 text-[var(--color-dark-text-secondary)]">
             If your question isn&apos;t answered above, reach out directly. We read
             every email and will get back to you as soon as possible.
           </p>
           <a
             href="mailto:jaylima0@gmail.com"
-            className="inline-flex rounded-[8px] bg-[var(--color-primary)] px-8 py-3 text-sm font-bold uppercase tracking-[0.08em] text-[var(--color-surface)] transition-all duration-150 hover:-translate-y-0.5 no-underline"
+            className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-8 py-3.5 text-sm font-bold uppercase tracking-[0.08em] text-[var(--color-on-accent)] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(184,255,87,0.3)] no-underline"
           >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             EMAIL SUPPORT
           </a>
         </div>
