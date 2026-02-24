@@ -1,70 +1,80 @@
 # Teaser-Site
 
-Static marketing and support website for **Teaser** — the fitness curriculum platform for professional fitness instructors. Hosted on GitHub Pages.
+Marketing and support website for **Teaser** — the fitness curriculum platform for professional fitness instructors. Built with Next.js, TypeScript, and Tailwind CSS. Hosted on GitHub Pages via static export.
 
-## What This Repo Is
+## Tech Stack
 
-This is a pure HTML/CSS/JavaScript static site that serves as:
-- The app's homepage and marketing site
-- A features deep-dive page
-- A support hub with FAQ (required by App Store / Google Play)
-- Privacy Policy (required by app stores)
-- Terms of Service
+- **Next.js 16** (App Router) with static export
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Motion** (Framer Motion) for scroll-reveal animations
+- **Google Fonts**: Barlow Condensed, IBM Plex Sans, IBM Plex Mono
 
-No build tools, no npm, no frameworks. Open `index.html` in any browser.
+## Pages
 
-## Preview Locally
+| Route | Description |
+|---|---|
+| `/` | Homepage — hero, social proof, features overview, how-it-works, download CTA |
+| `/features` | Deep-dive feature breakdowns with UI mockups |
+| `/support` | Contact info + FAQ accordion (required by App Store / Google Play) |
+| `/about` | Origin story + creator bio |
+| `/privacy` | Privacy Policy |
+| `/terms` | Terms of Service |
+
+## Getting Started
 
 ```bash
-# Requires a local server (file:// won't resolve clean URLs or root-relative paths)
-npx serve .
-# Then open http://localhost:3000
-
-# Or with Python
-python3 -m http.server 8080
-# Then open http://localhost:8080
+npm install
+npm run dev       # Start dev server at http://localhost:3000
+npm run build     # Static export to out/
+npx serve out     # Preview the production build locally
 ```
 
-## GitHub Pages Configuration
+## Deployment
+
+The site deploys automatically to GitHub Pages via GitHub Actions on every push to `main`.
+
+### GitHub Pages Setup
 
 1. Go to **Settings → Pages** in this repository
-2. Set Source to **Deploy from a branch**
-3. Choose the `main` branch and `/ (root)` folder
-4. Save — the site will be live at `https://briighter.github.io/Teaser-Site/`
+2. Set Source to **GitHub Actions** (not "Deploy from a branch")
+3. The site will be live at your custom domain or `https://briighter.github.io/Teaser-Site/`
 
-> The `.nojekyll` file in the root prevents GitHub Pages from running Jekyll on this repo.
+The deploy workflow (`.github/workflows/deploy.yml`) handles building, exporting, and deploying.
 
 ## Updating Legal Pages
 
-- **Privacy Policy** → edit `privacy/index.html` — update the "Last Updated" date and section content as needed
-- **Terms of Service** → edit `terms/index.html` — update the "Last Updated" date, governing jurisdiction placeholder, and any other sections
+- **Privacy Policy** → edit `src/app/privacy/page.tsx`
+- **Terms of Service** → edit `src/app/terms/page.tsx`
 
-## File Structure
+## Project Structure
 
 ```
 /
-├── index.html              # Homepage
-├── features/
-│   └── index.html          # Features deep-dive  →  /features/
-├── support/
-│   └── index.html          # Support / FAQ       →  /support/
-├── privacy/
-│   └── index.html          # Privacy Policy      →  /privacy/
-├── terms/
-│   └── index.html          # Terms of Service    →  /terms/
-├── css/
-│   ├── variables.css       # Design tokens (colors, spacing, typography)
-│   ├── base.css            # Reset, body, typography
-│   ├── components.css      # Buttons, cards, chips, badges, FAQ accordion
-│   ├── layout.css          # Nav, footer, grid, sections
-│   └── animations.css      # Scroll reveal transitions
-├── js/
-│   ├── main.js             # Navigation scroll behavior, active link
-│   └── animations.js       # IntersectionObserver scroll reveals
-├── assets/
-│   └── favicon.svg         # SVG "T" lettermark favicon
-├── .nojekyll               # Prevents Jekyll processing on GitHub Pages
-└── README.md
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx              # Root layout (fonts, navbar, footer)
+│   │   ├── globals.css             # CSS variables, Tailwind config
+│   │   ├── page.tsx                # Homepage
+│   │   ├── about/page.tsx          # About page
+│   │   ├── features/page.tsx       # Features deep-dive
+│   │   ├── support/page.tsx        # Support / FAQ
+│   │   ├── privacy/page.tsx        # Privacy Policy
+│   │   └── terms/page.tsx          # Terms of Service
+│   └── components/
+│       ├── navbar.tsx              # Sticky nav with mobile menu
+│       ├── footer.tsx              # Site footer
+│       ├── reveal.tsx              # Motion scroll-reveal wrappers
+│       ├── page-hero.tsx           # Reusable page header
+│       ├── download-cta.tsx        # App Store / Google Play CTA
+│       ├── home/                   # Homepage sections
+│       └── features/               # Feature mockup components
+├── public/
+│   └── favicon.svg                 # SVG "T" lettermark
+├── .github/workflows/deploy.yml    # GitHub Pages CI/CD
+├── next.config.ts                  # Static export config
+├── tailwind.config.ts
+└── package.json
 ```
 
 ## Brand Colors
@@ -72,7 +82,7 @@ python3 -m http.server 8080
 | Token | Value | Usage |
 |---|---|---|
 | `--color-primary` | `#1E2019` | Deep charcoal — primary text, buttons |
-| `--color-accent` | `#B8FF57` | Electric lime — CTAs, highlights only (5% use) |
+| `--color-accent` | `#B8FF57` | Electric lime — CTAs, highlights (5% use) |
 | `--color-tertiary` | `#5B6B7C` | Slate blue — secondary text |
 | `--color-background` | `#FAFBF9` | Page background |
 | `--color-surface` | `#FFFFFF` | Card/nav backgrounds |
